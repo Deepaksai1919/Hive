@@ -1,0 +1,40 @@
+lower
+upper
+concat
+length
+ltrim
+rtrim
+reverse
+
+select lpad('345',10,'0');
+'0000000345'
+select lpad('345',10,'08');
+'0808080345'
+select lpad('345',10,'084');
+'0840840345'
+
+same for rpad but right side
+
+select rpad('345',10,'084');
+'3450840840'
+
+select repeat('a',5);
+'aaaaa'
+
+select split('hive:hadoop',':');
+["hive","hadoop"]
+
+select substr('hive is querying tool',4);
+"e is querying tool"
+
+select substr('hive is querying tool',1,4);
+"hive"
+
+select instr('apache hive is querying tool','hive');
+8
+
+select instr('apache hive is querying tool','a');
+1
+
+select instr('apache hive is querying tool','ac');
+3

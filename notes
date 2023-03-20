@@ -28,3 +28,7 @@ For eg: odd numbers to one reducer, even numbers to one reducer
 cluster by = distribute by sort by
 
 it is short cut and same as "distribute by sort by"
+
+
+nvl takes 2 arguments
+coalesce takes many arguments

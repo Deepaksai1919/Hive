@@ -1,0 +1,11 @@
+select unix_timestamp('20-03-2023 15:30:45','dd-MM-yyyy HH:mm:ss');
+gives number of seconds since epoch i.e. (1970-01-01 00:00:00)
+
+select from_unixtime(1679326245, 'yyyy-MM-dd HH:mm:ss');
+gives datetime in specified format
+
+select rand();
+will generate random number
+
+select rand(number)
+will generate same random number every time for the same argument

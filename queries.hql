@@ -37,6 +37,7 @@ create table if not exists table1 (
 row format delimited
 fields terminated by ','
 collection items terminated by ':'
+map keys terminated by '='
 lines terminated by '\n'
 stored as textfile;
 

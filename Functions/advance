@@ -1,0 +1,9 @@
+explode(col) will select all elements of arrays in all rows as indevidual rows
+
+with explode we can select only one column.
+
+so lateral view function is introduced
+
+syntax:
+
+select col1, e from table1 lateral view explode(col2) e as e;
