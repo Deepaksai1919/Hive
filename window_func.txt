@@ -1,0 +1,6 @@
+emp1,dna,30000
+emp3,dna,120000
+emp4,dna,100000
+emp5,java,45000
+emp6,java,45000
+emp7,dna,100000
