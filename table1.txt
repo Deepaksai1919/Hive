@@ -1,0 +1,6 @@
+499,Poole:GBR,England,141000,a=1:b=2:c=3
+501,Blackburn:GBR,England,140000,d=6:h=9:g=5
+500,Bolton:GBR,England,139020,a=3:b=2:c=1
+502,Newport:GBR,Wales,139000,a=6:b=7:m=13
+503,PrestON:GBR,England,135000,s=8:k=6:l=12
+504,Stockport:GBR,England,132813,d=8:h=5:g=0:m=7

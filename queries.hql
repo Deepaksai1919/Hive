@@ -33,7 +33,7 @@ create table if not exists table1 (
     col2 array<string>,
     col3 string,
     col4 int,
-    col5 struct<key:string, value:string>
+    col5 map<string,string>
 )
 row format delimited
 fields terminated by ','
