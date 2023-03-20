@@ -130,3 +130,5 @@ set mapreduce.job.reduces=2;
 
 select * from table5 order by col2;
 select * from table5 sort by col2;
+select * from table5 distribute by col2 sort by col2;
+select * from table5 cluster by col2;

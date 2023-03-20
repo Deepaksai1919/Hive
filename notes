@@ -21,3 +21,10 @@ but sort by uses multiple reducers and the entire data is not sorted;
 set mapreduce.job.reduces=2; -- use this to set 2 reducers and check order by vs sort by
 
 in production, order by has to be used with limit
+
+distribute by will distribute the values to the reducers.
+For eg: odd numbers to one reducer, even numbers to one reducer
+
+cluster by = distribute by sort by
+
+it is short cut and same as "distribute by sort by"

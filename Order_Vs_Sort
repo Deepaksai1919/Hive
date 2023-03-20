@@ -67,3 +67,38 @@ dfh     5
 j       5
 h       5
 s       6
+
+
+select * from table5 distribute by col2 sort by col2;
+
+jfy     2
+vyj     2
+ub      2
+gj      2
+vhk     2
+rht     2
+ef      2
+bj      4
+dth     4
+l       4
+hyj     4
+bjk     4
+fh      6
+s       6
+dth     12
+teh     1
+aa      1
+cv      1
+bb      1
+dth     1
+dth     1
+ef      1
+sr      1
+yj      1
+h       3
+g       5
+dd      5
+dfh     5
+kf      5
+h       5
+j       5
