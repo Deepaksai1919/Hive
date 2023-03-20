@@ -127,3 +127,6 @@ load data local inpath '/config/workspace/order' into table table5;
 
 
 set mapreduce.job.reduces=2;
+
+select * from table5 order by col2;
+select * from table5 sort by col2;

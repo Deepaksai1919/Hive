@@ -11,3 +11,13 @@ the above command returns the default database hdfs path
 tblproperties ('skip.header.line.count'='1') for skipping header
 
 set hive.cli.print.header=true; to print header
+
+order by vs sort by:
+
+order by uses one reducer and sorts the entire data
+
+but sort by uses multiple reducers and the entire data is not sorted;
+
+set mapreduce.job.reduces=2; -- use this to set 2 reducers and check order by vs sort by
+
+in production, order by has to be used with limit
