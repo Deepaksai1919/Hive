@@ -1,0 +1,30 @@
+rank, dense_rank, row_number
+
+
+select *, row_number() over(partition by dept order by sal desc) as row_number from emp;
+
+emp3    dna     120000  1
+emp7    dna     100000  2
+emp4    dna     100000  3
+emp1    dna     30000   4
+emp6    java    45000   1
+emp5    java    45000   2
+
+
+select *, rank() over(partition by dept order by sal desc) as rank from emp;
+
+emp3    dna     120000  1
+emp7    dna     100000  2
+emp4    dna     100000  2
+emp1    dna     30000   4
+emp6    java    45000   1
+emp5    java    45000   1
+
+select *, dense_rank() over(partition by dept order by sal desc) as dense_rank from emp;
+
+emp3    dna     120000  1
+emp7    dna     100000  2
+emp4    dna     100000  2
+emp1    dna     30000   3
+emp6    java    45000   1
+emp5    java    45000   1
