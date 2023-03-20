@@ -95,3 +95,35 @@ create table if not exists mgr_tab (col1 int, col2 string, col3 string) stored a
 from employees 
 insert into dev_tab select col1, col2, col3 where col3 = 'Developer'
 insert into mgr_tab select col1, col2, col3 where col3 = 'Mgr';
+
+
+create table if not exists tab(
+    col1 int,
+    col2 string,
+    col3 string
+)
+stored as textfile;
+
+insert into tab select col1,col2,col3 from employees;
+
+-- schema alter
+
+alter table tab add columns (col4 string, col5 int); -- for adding columns
+alter table tab change col2 new_col2 string; -- rename column
+alter table tab rename to tab1; -- rename table
+alter table tab1 replace columns (id int, name string);
+
+
+create table table5 (
+    col1 string,
+    col2 int
+)
+row format delimited
+fields terminated by ','
+lines terminated by '\n'
+stored as textfile;
+
+load data local inpath '/config/workspace/order' into table table5;
+
+
+set mapreduce.job.reduces=2;
