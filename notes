@@ -1,0 +1,9 @@
+Deleting db path will not drop database from metadata.
+If you use this db and create a table, the db path is also created.
+
+
+But dropping database will delete the corresponding hdfs path.
+
+set hive.metastore.warehouse.dir;
+
+the above command returns the default database hdfs path
