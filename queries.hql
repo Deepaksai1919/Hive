@@ -68,3 +68,30 @@ location '/user/deepak/table3';
 
 
 load data local inpath '/config/workspace/table1.txt' into table table1;
+
+use db1;
+create table if not exists employees(
+    col1 int,
+    col2 string,
+    col3 string,
+    col4 int,
+    col5 int,
+    col6 int,
+    col7 string
+)
+row format delimited
+fields terminated by ','
+lines terminated by '\n'
+stored as textfile;
+
+load data local inpath '/config/workspace/employees' into table employees;
+
+
+create table if not exists dev_tab (col1 int, col2 string, col3 string) stored as textfile;
+
+create table if not exists mgr_tab (col1 int, col2 string, col3 string) stored as textfile;
+
+--- Multi Insert
+from employees 
+insert into dev_tab select col1, col2, col3 where col3 = 'Developer'
+insert into mgr_tab select col1, col2, col3 where col3 = 'Mgr';

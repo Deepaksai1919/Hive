@@ -52,3 +52,8 @@ returned,
 from_unixtime(unix_timestamp(returned_date,'dd-MM-yyyy'),'yyyy-MM-dd') as returned_date,
 reason_of_return
 from orders_stg;
+
+set hive.cli.print.header=true;
+
+"insert into" will append
+"insert overwrite" will overwrite the data
