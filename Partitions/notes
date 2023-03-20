@@ -1,0 +1,11 @@
+partition column value need not be present in the data for static partition loading
+
+static partitioning is faster than dynamic partition.
+
+hive.exec.dynamic.partition.mode=strict
+will required atlease one static partition in case of multi partitioned tables
+
+If partition is deleted from hdfs, hive metadata will not keep track of those deleted partitions.
+It can be corrected using "msck repaiir"
+
+msck repair table table_name;

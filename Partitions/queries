@@ -1,0 +1,56 @@
+create database if not exists partition_db;
+
+use partition_db;
+
+create table if not exists dept (
+    dept_id int,
+    dept string,
+    emp_name string,
+    sal int
+)
+row format delimited
+fields terminated by ','
+lines terminated by '\n'
+stored as textfile;
+
+load data local inpath '/config/workspace/Partitions/dept.txt' into table dept;
+
+create table if not exists dept_partitioned_static (
+    dept_id int,
+    emp_name string,
+    sal int
+)
+partitioned by (dept string)
+row format delimited
+fields terminated by ','
+lines terminated by '\n'
+stored as textfile;
+
+load data local inpath '/config/workspace/Partitions/act' 
+into table dept_partitioned_static partition(dept='Account');
+
+show partitions dept_partitioned_static;
+
+insert into table dept_partitioned_static partition (dept='HR') select dept_id, emp_name, sal from 
+dept where dept='HR';
+
+
+create table if not exists dept_partitioned_dynamic (
+    dept_id int,
+    emp_name string,
+    sal int
+)
+partitioned by (dept string)
+row format delimited
+fields terminated by ','
+lines terminated by '\n'
+stored as textfile;
+
+set hive.exec.dynamic.partition=true;
+set hive.exec.dynamic.partition.mode=nonstrict;
+
+insert into table dept_partitioned_dynamic partition (dept) 
+select dept_id, emp_name, sal, dept from dept;
+
+
+msck repair table dept_partitioned_dynamic;
