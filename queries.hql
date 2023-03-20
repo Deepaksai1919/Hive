@@ -134,3 +134,15 @@ select * from table5 order by col2;
 select * from table5 sort by col2;
 select * from table5 distribute by col2 sort by col2;
 select * from table5 cluster by col2;
+
+create table if not exists emp (
+    name string,
+    dept string,
+    sal int
+)
+row format delimited
+fields terminated by ','
+lines terminated by '\n'
+stored as textfile;
+
+load data local inpath '/config/workspace/window_func.txt' into table emp;

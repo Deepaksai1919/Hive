@@ -5,5 +5,19 @@ with explode we can select only one column.
 so lateral view function is introduced
 
 syntax:
+col2 is array
+col5 is map
 
 select col1, e from table1 lateral view explode(col2) e as e;
+
+
+select col1, key, value from table1 lateral view explode(col5) e as key,value;
+
+
+rlike:
+will return true or false if there is a pattern matched
+syntax:
+select 'hadoop' rlike 'ha':
+true
+
+if there is null either in column value or match value, the result will be null
