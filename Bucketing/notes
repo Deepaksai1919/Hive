@@ -1,0 +1,19 @@
+set hive.enforce.bucketing=true;
+set hive.exec.dynamic.partition.mode=nonstrict;
+
+bucketing along with partitions will be efficient
+
+create table dept_with_location (
+    dept_no int,
+    emp_name string
+    sal int
+)
+partitioned by (dept string)
+clustered by (location) into 4 buckets
+row format delmited
+fields terminated by ','
+lines terminated by '\n'
+stored as textfile;
+
+Two bucketed tables can be joined very fast but both the tables are to be bucketed on the joining column
+and bucketed into same number of buckets
